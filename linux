@@ -1,1 +1,59 @@
+Q1)- How do you check disk usage in Linux?
+A: df -h, du -sh
+1. df -h (Disk Free)
+The df command is used to show the amount of disk space used and available on the file system. The -h option stands for "human-readable," which means it will display the disk usage in a format that is easy to understand (e.g., in GB, MB, etc., rather than in bytes).
+2. du -sh (Disk Usage)
+The du command stands for "disk usage," and it shows how much space a directory or file is using. The -s option means "summary," so it shows only the total disk usage for the specified directory (instead of listing usage for every subdirectory). The -h option, like with df, makes the output human-readable.
+If you want to check the disk usage of all directories inside a specific path, you can omit the -s option
+
+
+Q2)- How can you check memory usage on a Linux system?
+A: To check memory usage on a Linux system, there are several commands you can use.
+the most common ones: free -m, top, and htop.
+1. free -m (Memory Usage)
+The free command provides a quick summary of the system's memory usage, showing total, used, free, shared, and available memory.
+2. top (Task and Memory Monitor)
+The top command provides a dynamic, real-time view of your system, including memory usage, running processes, CPU usage, and more. It updates every few seconds.
+3. htop (Interactive Process Viewer)
+The htop command is similar to top, but it provides a more user-friendly, interactive, and colorful display. It shows memory and CPU usage, running processes, and allows you to interact with the system more easily (like killing processes, sorting, etc.).
+Key Differences Between free -m, top, and htop:
+free -m: Simple and quick summary of memory usage. Great for a quick look at overall memory usage.
+top: Real-time dynamic view of system processes and memory usage. Good for monitoring system performance and checking individual processes.
+htop: An enhanced, interactive version of top, providing a more colorful and user-friendly display. It’s great for interactive use and process management.
+
+Q3)- How do you display the content of a file in Linux?
+A: cat, less, more
+
+Q4)- How would you find a file by name in Linux?
+A: find /path/to/search -name filename
+Q5) How can you search for a text pattern within a file in Linux?
+A: grep "pattern" file
+
+Q5)- What is the difference between a hard link and a soft (symbolic) link?
+A: Hard link:- A hard link is a second name for an existing file, pointing to the same inode and data on disk. Both the original file and the hard link are indistinguishable and share the same data.
+   Soft link:- A soft link is like a shortcut to another file or folder. It contains the path to the original file, and if the original is deleted, the link stops working.
+    
+Feature	            Hard Link                                                            Soft (Symbolic) Link
+-------------       -----------------------------------------------------------      -----------------------------------------------------------                                                      
+Target	          Points directly to the file's inode.	                          Points to the file's path (location).
+Inode	            Same inode number as the original file.	                        Has its own inode.
+Directories	      Cannot link to directories (except by root).	                  Can link to directories.
+Cross-filesystem	Cannot link across different filesystems.	                      Can link across different filesystems.
+File Deletion	    The link remains valid even if the original file is deleted.	  Becomes broken if the original file is deleted or moved.
+Link Type	        Identical file, no distinction between original and link.      	A special file that points to the original file by its path.
+Permissions	      Same permissions and ownership as the original file.	          Has its own permissions, typically different from the original.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
